@@ -8,12 +8,14 @@ import time
 random_list1 = [randint(-1000000, 1000000) for i in range(1000000)]
 random_list2 = [randint(-1000000, 1000000) for i in range(1000000)]
 
-random_list3 = []
+#random_list3 = []
 #Начало замера времени
 t_start = time.perf_counter()
 
-for i in range(0, len(random_list1)):
-    random_list3.append(random_list1[i] * random_list2[i])
+random_list3 = list(map(lambda x, y: x*y, random_list1, random_list2))
+
+#for i in range(0, len(random_list1)):
+#    random_list3.append(random_list1[i] * random_list2[i])
 time.sleep(1)
 #Конец замера времени
 all_time = time.perf_counter() - t_start
